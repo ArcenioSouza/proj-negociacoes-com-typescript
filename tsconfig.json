@@ -2,7 +2,8 @@
    "compilerOptions": {
       "outDir": "dist/js", /* Pasta que você deseja que os arquivos compilados sejam enviados */
       "target": "ES6", /* Versão do ECMA que você deseja que os arquivos ts sejam compilados */
-      "noEmitOnError": true /* Não gera arquivo js enquanto houver erro */
+      "noEmitOnError": true, /* Não gera arquivo js enquanto houver erro */
+      "noImplicitAny": true /* Não permite que uma variável receba qualquer tipo de dado */
    },
    "include": [
       "app/**/*" /* Diretório onde estão os arquivos que você quer compilar, nesse caso estou dizendo que quero todos os arquivos de todas as pastas de app */
