@@ -41,12 +41,18 @@ export class Negociacao {
    //Outra forma de fazer para substituir os metodos geters:
    constructor(
       //aqui eu deixo como public mas torno os atributos somente leitura, assim eles não podem ser modificados mas podem ser acessados.
-      public readonly data: Date,
+      private _data: Date,
       public readonly quantidade: number,
       public readonly valor: number
    ){}
 
    get volume(): number {
       return this.quantidade * this.valor;
+   }
+
+   /* Criei esse get para que ninguém possa alterar a data original através do método setDate */
+   get data(): Date {
+      const data = new Date(this._data.getTime())
+      return data
    }
 }
