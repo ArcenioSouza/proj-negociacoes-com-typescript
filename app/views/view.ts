@@ -14,5 +14,5 @@ export abstract class View<T> {
    }
 
    /* o abstract passa a responsabilidade da implementação do código para a classe filha, assim se o método template não for implementado o typescript irá retornar um erro antes do código estar em runtime */
-   abstract template(model: T): string;
+   protected abstract template(model: T): string;
 }
