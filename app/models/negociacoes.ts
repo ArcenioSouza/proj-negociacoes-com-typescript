@@ -6,7 +6,7 @@ export class Negociacoes {
    Esse código acima pode ser feito assim tbém */
    private negociacoes: Negociacao[] = [];
 
-   adiciona(negociacao: Negociacao){
+   public adiciona(negociacao: Negociacao){
       this.negociacoes.push(negociacao);
    }
    
@@ -17,7 +17,7 @@ export class Negociacoes {
    } 
    
    Com a modificação da declaração na linha 7 há uma mudança na declaração do retorno do método lista, que ficará assim:*/
-   lista(): readonly Negociacao[] {
+   public lista(): readonly Negociacao[] {
       return this.negociacoes
    }
 
