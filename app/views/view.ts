@@ -1,5 +1,5 @@
 /* Eu transformo a classe em generics para que o seu tipo seja definido nos filhos, assim eu posso usar os seus métodos recebendo model de diferentes tipos */
-export class View<T> {
+export abstract class View<T> {
 
    /* com o protected as filhas dessa classe podem acessar o atributo mas outras instâncias não */
    protected elemento: HTMLElement
@@ -13,7 +13,6 @@ export class View<T> {
       this.elemento.innerHTML = template
    }
 
-   template(model: T): string {
-      throw Error('Classe filha precisa implementar o método')
-   }
+   /* o abstract passa a responsabilidade da implementação do código para a classe filha, assim se o método template não for implementado o typescript irá retornar um erro antes do código estar em runtime */
+   abstract template(model: T): string;
 }
