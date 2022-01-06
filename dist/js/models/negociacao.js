@@ -52,4 +52,11 @@ export class Negociacao {
         const data = new Date(this._data.getTime());
         return data;
     }
+    static criaDe(dataString, quantidadeString, valorString) {
+        const exp = /-/g; /* expressão regular que identifica todos os - de uma string */
+        const date = new Date(dataString.replace(exp, ',')); /* aqui o replace subtitui tudo o que for achado através da expressão para virgula */
+        const quantidade = parseInt(quantidadeString);
+        const valor = parseFloat(valorString);
+        return new Negociacao(date, quantidade, valor);
+    }
 }
